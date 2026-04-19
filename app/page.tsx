@@ -1,19 +1,6 @@
-import { define } from "@/utils.ts";
-import { Head } from "fresh/runtime";
-
-export const handler = define.handlers({
-  GET(ctx) {
-    return { data: { hellofromserver: "Hello, World! from Server." } };
-  },
-});
-
-export default define.page<typeof handler>((props) => {
+export default function Home() {
   return (
-    <>
-      <Head>
-        <title>김준영</title>
-      </Head>
-      <div className="mt-6 max-w-md mx-auto p-6 bg-white rounded-2xl shadow-lg text-center">
+    <div className="mt-6 max-w-md mx-auto p-6 bg-white rounded-2xl shadow-lg text-center">
         <h1 className="text-3xl font-extrabold text-gray-800 mb-2">
           Junyong Kim 🇰🇷
         </h1>
@@ -37,10 +24,5 @@ export default define.page<typeof handler>((props) => {
           </span>
         </div>
       </div>
-
-      <div className="mt-6 max-w-md mx-auto p-6 bg-white rounded-2xl shadow-lg text-center">
-        {props.data.hellofromserver}
-      </div>
-    </>
   );
-});
+}
